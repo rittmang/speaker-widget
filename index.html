@@ -14,7 +14,12 @@
 </body>
 <script>
   fetch('https://whova.com/xems/whova_backend/speaker/get_webpage_data/lyys_202110/', {
-    mode: "cors"
+    mode: "cors",
+    headers:{
+      'Access-Control-Allow-Credentials':'true',
+      'Access-Control-Allow-Origin':'*',
+      'Host':'silly-elion-1d3384.netlify.app'
+    }
   })
     .then(res => res.json())
     .then((out) => {
