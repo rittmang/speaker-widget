@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title>CSS Gallery</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  
+  <div class="gallery-image" id="gal-img">
+  </div>
+</body>
+<script>
+  fetch('https://cors-anywhere.herokuapp.com/https://whova.com/xems/whova_backend/speaker/get_webpage_data/lyys_202110/', {
+    mode: "cors"
+  })
+    .then(res => res.json())
+    .then((out) => {
+      spk = out['data']['display_dict']['All Speakers'];
+      console.log(spk);
+      for (let i = 0; i < spk.length; i++) {
+        if (spk[i]['info_uploaded'] === true) {
+          document.getElementById("gal-img").innerHTML += '<div class="img-box"><a href="'+'https://whova.com/embedded/speaker_detail/lyys_202110/'+spk[i]['pid']+'/"><img src="' + spk[i]['pic'] + '" alt="" loading="lazy"/><div class="transparent-box"><div class="caption"><p>' + spk[i]['name'] + '</p><p class="opacity-low">'+spk[i]['title']+','+spk[i]['company']+'</p></div></div></a></div>';
+        }
+      }
+
+    })
+    .catch(err => {
+      throw err
+    });
+</script>
+
+</html>
