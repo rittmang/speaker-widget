@@ -22,7 +22,7 @@
       console.log(spk);
       for (let i = 0; i < spk.length; i++) {
         if (spk[i]['info_uploaded'] === true) {
-          document.getElementById("gal-img").innerHTML += '<div class="img-box"><a href="'+'https://whova.com/embedded/speaker_detail/lyys_202110/'+spk[i]['pid']+'/"><img src="' + spk[i]['pic'] + '" alt="" loading="lazy"/><div class="transparent-box"><div class="caption"><p>' + spk[i]['name'] + '</p><p class="opacity-low">'+spk[i]['title']+','+spk[i]['company']+'</p></div></div></a></div>';
+          document.getElementById("gal-img").innerHTML += '<div class="img-box"><a href="'+'https://whova.com/embedded/speaker_detail/lyys_202110/'+spk[i]['pid']+'/"><img src="' + spk[i]['pic'] + '" alt="" loading="lazy"/><div class="transparent-box"><div class="caption"><p>' + spk[i]['name'] + '</p><p class="opacity-low">'+spk[i]['title']+'<br/>'+spk[i]['company']+'</p></div></div></a></div>';
         }
       }
 
