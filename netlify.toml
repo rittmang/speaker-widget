@@ -3,8 +3,3 @@
   for = "/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
-    cache-control = '''
-    max-age=0,
-    no-cache,
-    no-store,
-    must-revalidate'''
